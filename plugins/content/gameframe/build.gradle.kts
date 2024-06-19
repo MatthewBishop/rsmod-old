@@ -4,10 +4,10 @@ plugins {
 
 dependencies {
     implementation(projects.game)
-    implementation(projects.game.events)
-    implementation(projects.game.scripts)
+    implementation(libs.rsmodEvents)
+    implementation(libs.rsmodScripts)
     implementation(projects.plugins.api)
-    implementation(projects.plugins.types)
+    implementation(libs.rsmodTypes)
     implementation(libs.guice)
     implementation(libs.kotlinScriptRuntime)
 }

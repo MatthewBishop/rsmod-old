@@ -3,10 +3,10 @@ plugins {
 }
 
 dependencies {
-    api(projects.game.map)
-    api(projects.game.pathfinder)
+    api(libs.rsmodMap)
+    api(libs.rsmodPathfinder)
     api(projects.plugins.testing.assertions)
-    implementation(projects.game.scripts)
+    implementation(libs.rsmodScripts)
     implementation(projects.log)
     implementation(projects.plugins.api)
     implementation(libs.guice)

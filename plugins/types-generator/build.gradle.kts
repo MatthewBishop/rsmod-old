@@ -3,12 +3,12 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.buffer)
+    implementation(libs.rsmodBuffer)
     implementation(projects.game)
     implementation(projects.plugins.api)
-    implementation(projects.plugins.types)
+    implementation(libs.rsmodTypes)
     implementation(projects.plugins.typesGenerated)
-    implementation(projects.toml)
+    implementation(libs.rsmodToml)
     implementation(libs.clikt)
     implementation(libs.guice)
     implementation(libs.kotlinPoet)

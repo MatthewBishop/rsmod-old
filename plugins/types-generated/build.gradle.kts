@@ -12,7 +12,7 @@ plugins.withType<KotlinPluginWrapper> {
     }
 
     dependencies {
-        implementation(projects.plugins.types)
+        implementation(libs.rsmodTypes)
     }
 
     sourceSets {

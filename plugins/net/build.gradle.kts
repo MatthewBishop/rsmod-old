@@ -4,9 +4,9 @@ plugins {
 
 dependencies {
     implementation(projects.game)
-    implementation(projects.game.events)
-    implementation(projects.game.scripts)
-    implementation(projects.game.protocol)
+    implementation(libs.rsmodEvents)
+    implementation(libs.rsmodScripts)
+    implementation(libs.rsmodProtocol)
     implementation(projects.plugins.api)
     implementation(projects.plugins.profile)
     implementation(projects.plugins.store)

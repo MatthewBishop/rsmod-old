@@ -4,9 +4,9 @@ plugins {
 
 dependencies {
     implementation(projects.game)
-    implementation(projects.game.map)
-    implementation(projects.game.scripts)
-    implementation(projects.json)
+    implementation(libs.rsmodMap)
+    implementation(libs.rsmodScripts)
+    implementation(libs.rsmodJson)
     implementation(projects.plugins.store)
     implementation(libs.guice)
     implementation(libs.jacksonDatabind)

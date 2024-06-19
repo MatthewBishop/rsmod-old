@@ -3,13 +3,13 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.buffer)
+    implementation(libs.rsmodBuffer)
     implementation(projects.log)
-    implementation(projects.toml)
-    implementation(projects.game.coroutines)
-    implementation(projects.game.events)
-    implementation(projects.game.map)
-    implementation(projects.game.protocol)
+    implementation(libs.rsmodToml)
+    implementation(libs.rsmodCoroutines)
+    implementation(libs.rsmodEvents)
+    implementation(libs.rsmodMap)
+    implementation(libs.rsmodProtocol)
     implementation(libs.clikt)
     implementation(libs.guava)
     implementation(libs.guice)

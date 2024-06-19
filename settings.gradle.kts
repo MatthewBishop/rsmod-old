@@ -12,18 +12,9 @@ pluginManagement {
 }
 
 include(
-    "buffer",
     "game",
-    "game:coroutines",
-    "game:events",
-    "game:map",
-    "game:pathfinder",
-    "game:protocol",
-    "game:scripts",
-    "json",
     "log",
     "plugins",
-    "toml",
     "app"
 )
 
@@ -46,5 +37,7 @@ fun searchPlugin(parentName: String, pluginRoot: Path, currentPath: Path) {
     }
     val relativePath = pluginRoot.relativize(currentPath)
     val pluginName = relativePath.toString().replace(File.separator, ":")
+    if(pluginName == "info" || pluginName == "cache" || pluginName == "types")
+        return
     include("$parentName:$pluginName")
 }

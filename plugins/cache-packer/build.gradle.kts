@@ -3,12 +3,12 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.buffer)
+    implementation(libs.rsmodBuffer)
     implementation(projects.game)
     implementation(projects.plugins.api)
-    implementation(projects.plugins.cache)
-    implementation(projects.plugins.types)
-    implementation(projects.toml)
+    implementation(libs.rsmodCache)
+    implementation(libs.rsmodTypes)
+    implementation(libs.rsmodToml)
     implementation(libs.clikt)
     implementation(libs.inlineLogger)
     implementation(libs.openrs2Cache)

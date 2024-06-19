@@ -6,8 +6,8 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.game.map)
-    implementation(projects.plugins.types)
+    implementation(libs.rsmodMap)
+    implementation(libs.rsmodTypes)
     implementation(libs.nettyBuffer)
     implementation(libs.openrs2Buffer)
     implementation(libs.openrs2Cache)

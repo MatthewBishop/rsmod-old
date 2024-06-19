@@ -11,23 +11,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/buffer" />
             <option value="$PROJECT_DIR$/game" />
-            <option value="$PROJECT_DIR$/game/coroutines" />
-            <option value="$PROJECT_DIR$/game/events" />
-            <option value="$PROJECT_DIR$/game/map" />
-            <option value="$PROJECT_DIR$/game/pathfinder" />
-            <option value="$PROJECT_DIR$/game/protocol" />
-            <option value="$PROJECT_DIR$/game/scripts" />
-            <option value="$PROJECT_DIR$/json" />
             <option value="$PROJECT_DIR$/log" />
             <option value="$PROJECT_DIR$/plugins" />
             <option value="$PROJECT_DIR$/plugins/api" />
-            <option value="$PROJECT_DIR$/plugins/cache" />
             <option value="$PROJECT_DIR$/plugins/cache-packer" />
             <option value="$PROJECT_DIR$/plugins/content" />
             <option value="$PROJECT_DIR$/plugins/content/gameframe" />
-            <option value="$PROJECT_DIR$/plugins/info" />
             <option value="$PROJECT_DIR$/plugins/net" />
             <option value="$PROJECT_DIR$/plugins/playground" />
             <option value="$PROJECT_DIR$/plugins/playground/login" />
@@ -37,10 +27,8 @@
             <option value="$PROJECT_DIR$/plugins/testing" />
             <option value="$PROJECT_DIR$/plugins/testing/assertions" />
             <option value="$PROJECT_DIR$/plugins/testing/simple" />
-            <option value="$PROJECT_DIR$/plugins/types" />
             <option value="$PROJECT_DIR$/plugins/types-generated" />
             <option value="$PROJECT_DIR$/plugins/types-generator" />
-            <option value="$PROJECT_DIR$/toml" />
           </set>
         </option>
       </GradleProjectSettings>
