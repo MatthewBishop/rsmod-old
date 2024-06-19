@@ -15,6 +15,10 @@ logback = "1.4.7"
 netty = "4.1.87.Final"
 openrs2 = "0.1.0-SNAPSHOT"
 manes-versions = "0.46.0"
+rsmod-base = "1.0.0"
+rsmod-pathfinder = "5.0.0"
+rsmod-coroutines = "2.1.0"
+rsmod-info = "1.0.1"
 
 [plugins]
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
@@ -46,3 +50,15 @@ nettyTransport = { module = "io.netty:netty-transport", version.ref = "netty" }
 openrs2Buffer = { module = "org.openrs2:openrs2-buffer", version.ref = "openrs2" }
 openrs2Cache = { module = "org.openrs2:openrs2-cache", version.ref = "openrs2" }
 openrs2Crypto = { module = "org.openrs2:openrs2-crypto", version.ref = "openrs2" }
+rsmodBuffer = { module = "dev.advo:rsmod-buffer", version.ref = "rsmod-base" }
+rsmodCache = { module = "dev.advo:rsmod-cache", version.ref = "rsmod-base" }
+rsmodCoroutines = { module = "dev.advo:rsmod-coroutines", version.ref = "rsmod-coroutines" }
+rsmodEvents = { module = "dev.advo:rsmod-events", version.ref = "rsmod-base" }
+rsmodInfo = { module = "dev.advo:rsmod-info", version.ref = "rsmod-info" }
+rsmodJson = { module = "dev.advo:rsmod-json", version.ref = "rsmod-base" }
+rsmodMap = { module = "dev.advo:rsmod-map", version.ref = "rsmod-base" }
+rsmodPathfinder = { module = "dev.advo:rsmod-pathfinder", version.ref = "rsmod-pathfinder" }
+rsmodProtocol = { module = "dev.advo:rsmod-protocol", version.ref = "rsmod-base" }
+rsmodScripts = { module = "dev.advo:rsmod-scripts", version.ref = "rsmod-base" }
+rsmodToml = { module = "dev.advo:rsmod-toml", version.ref = "rsmod-base" }
+rsmodTypes = { module = "dev.advo:rsmod-types", version.ref = "rsmod-base" }

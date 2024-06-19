@@ -26,6 +26,7 @@ allprojects {
         mavenCentral()
         maven { url = uri("https://repo.openrs2.org/repository/openrs2") }
         maven { url = uri("https://repo.openrs2.org/repository/openrs2-snapshots") }
+        maven("https://raw.githubusercontent.com/MatthewBishop/hosting/master")
     }
 
     plugins.withType<ApplicationPlugin> {
