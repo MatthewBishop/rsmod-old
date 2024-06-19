@@ -2,7 +2,7 @@ version = "1.0.1"
 
 plugins {
     `maven-publish`
-    signing
+//    signing
     kotlin("jvm")
     id("me.champeau.jmh") apply true
 }
@@ -28,9 +28,9 @@ publishing {
                 """.trimIndent()
             )
         }
-        signing {
-            useGpgCmd()
-            sign(publishing.publications["maven"])
-        }
+//        signing {
+//            useGpgCmd()
+//            sign(publishing.publications["maven"])
+//        }
     }
 }
