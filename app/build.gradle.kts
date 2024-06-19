@@ -3,6 +3,7 @@ plugins {
 }
 
 dependencies {
+    implementation(projects.config)
     implementation(projects.game)
     implementation(libs.rsmodEvents)
     implementation(libs.rsmodScripts)

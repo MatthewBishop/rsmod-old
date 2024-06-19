@@ -12,6 +12,7 @@ pluginManagement {
 }
 
 include(
+    "config",
     "game",
     "log",
     "plugins",

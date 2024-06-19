@@ -7,6 +7,7 @@ dependencies {
     api(libs.rsmodCache)
     api(projects.plugins.typesGenerated)
     implementation(libs.rsmodBuffer)
+    implementation(projects.config)
     implementation(projects.game)
     implementation(libs.rsmodEvents)
     implementation(libs.rsmodMap)

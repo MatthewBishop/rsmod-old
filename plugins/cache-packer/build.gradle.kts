@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     implementation(libs.rsmodBuffer)
+    implementation(projects.config)
     implementation(projects.game)
     implementation(projects.plugins.api)
     implementation(libs.rsmodCache)
