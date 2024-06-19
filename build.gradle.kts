@@ -13,7 +13,7 @@ val ossrhPassword: String? by ext
 plugins {
     kotlin("jvm")
     `jvm-test-suite`
-    alias(libs.plugins.kotlinter) apply false
+//    alias(libs.plugins.kotlinter) apply false
     alias(libs.plugins.jmh) apply false
     alias(libs.plugins.versions)
 }
@@ -86,8 +86,8 @@ allprojects {
     }
 
     plugins.withType<KotlinPluginWrapper> {
-        apply(plugin = "org.jmailen.kotlinter")
-        kotlin.explicitApi()
+//        apply(plugin = "org.jmailen.kotlinter")
+//        kotlin.explicitApi()
     }
 
     tasks.withType<JavaCompile> {
@@ -107,16 +107,7 @@ allprojects {
         configure<PublishingExtension> {
             repositories {
                 maven {
-                    name = "rsmod"
-                    if (version.toString().endsWith("-SNAPSHOT")) {
-                        setUrl("https://oss.sonatype.org/content/repositories/snapshots")
-                    } else {
-                        setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2")
-                    }
-                    credentials {
-                        username = ossrhUsername
-                        password = ossrhPassword
-                    }
+                    url = uri("K:/rsprot/repo")
                 }
             }
 
