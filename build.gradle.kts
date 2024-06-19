@@ -19,7 +19,7 @@ plugins {
 }
 
 allprojects {
-    group = "org.rsmod"
+    group = "dev.advo"
     version = "0.0.1"
 
     repositories {
