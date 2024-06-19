@@ -5,6 +5,7 @@ plugins {
 dependencies {
     api(projects.plugins.testing.assertions)
     implementation(projects.plugins.api)
+    implementation(projects.plugins.cacheApi)
     implementation(projects.plugins.testing)
     implementation(libs.inlineLogger)
     implementation(libs.junitApi)

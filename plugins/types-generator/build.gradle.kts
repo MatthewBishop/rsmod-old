@@ -5,8 +5,7 @@ plugins {
 dependencies {
     implementation(libs.rsmodBuffer)
     implementation(projects.config)
-    implementation(projects.game)
-    implementation(projects.plugins.api)
+    implementation(projects.plugins.cacheApi)
     implementation(libs.rsmodTypes)
     implementation(projects.plugins.typesGenerated)
     implementation(libs.rsmodToml)

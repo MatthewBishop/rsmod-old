@@ -9,6 +9,7 @@ dependencies {
     implementation(libs.rsmodScripts)
     implementation(projects.log)
     implementation(projects.plugins.api)
+    implementation(projects.plugins.cacheApi)
     implementation(libs.guice)
     implementation(libs.inlineLogger)
     implementation(libs.junitApi)

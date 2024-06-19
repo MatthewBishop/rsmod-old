@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/log" />
             <option value="$PROJECT_DIR$/plugins" />
             <option value="$PROJECT_DIR$/plugins/api" />
+            <option value="$PROJECT_DIR$/plugins/cache-api" />
             <option value="$PROJECT_DIR$/plugins/cache-packer" />
             <option value="$PROJECT_DIR$/plugins/content" />
             <option value="$PROJECT_DIR$/plugins/content/gameframe" />

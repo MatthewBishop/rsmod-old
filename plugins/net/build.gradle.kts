@@ -9,6 +9,7 @@ dependencies {
     implementation(libs.rsmodScripts)
     implementation(libs.rsmodProtocol)
     implementation(projects.plugins.api)
+    implementation(projects.plugins.cacheApi)
     implementation(projects.plugins.profile)
     implementation(projects.plugins.store)
     implementation(libs.guava)

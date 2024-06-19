@@ -9,6 +9,7 @@ dependencies {
     implementation(libs.rsmodBuffer)
     implementation(projects.config)
     implementation(projects.game)
+    implementation(projects.plugins.cacheApi)
     implementation(libs.rsmodEvents)
     implementation(libs.rsmodMap)
     implementation(libs.rsmodScripts)
