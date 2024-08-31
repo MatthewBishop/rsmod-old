@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.config)
+    implementation(libs.rsmodConfig)
     implementation(projects.game)
     implementation(libs.rsmodMap)
     implementation(libs.rsmodScripts)

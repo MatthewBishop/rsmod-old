@@ -62,3 +62,4 @@ rsmodProtocol = { module = "dev.advo:rsmod-protocol", version.ref = "rsmod-base"
 rsmodScripts = { module = "dev.advo:rsmod-scripts", version.ref = "rsmod-base" }
 rsmodToml = { module = "dev.advo:rsmod-toml", version.ref = "rsmod-base" }
 rsmodTypes = { module = "dev.advo:rsmod-types", version.ref = "rsmod-base" }
+rsmodConfig = { module = "dev.advo:rsmod-config", version.ref = "rsmod-base" }

@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.config)
+    implementation(libs.rsmodConfig)
     implementation(libs.rsmodBuffer)
     implementation(projects.log)
     implementation(libs.rsmodToml)

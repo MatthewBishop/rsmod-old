@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     api(libs.rsmodCache)
-    implementation(projects.config)
+    implementation(libs.rsmodConfig)
     implementation(libs.rsmodMap)
     implementation(libs.rsmodPathfinder)
     implementation(libs.rsmodJson)
