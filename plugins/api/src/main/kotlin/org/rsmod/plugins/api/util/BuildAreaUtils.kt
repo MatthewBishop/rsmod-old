@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.util
 
-import org.rsmod.game.map.zone.ZoneGrid
+import org.rsmod.map.zone.ZoneGrid
 
 @Suppress("MemberVisibilityCanBePrivate")
 public object BuildAreaUtils {

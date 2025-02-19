@@ -8,9 +8,10 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
-import org.rsmod.game.map.CoordGrid
-import org.rsmod.game.map.square.MapSquareKey.Companion.X_BIT_MASK
-import org.rsmod.game.map.square.MapSquareKey.Companion.Z_BIT_MASK
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.square.MapSquareKey
+import org.rsmod.map.square.MapSquareKey.Companion.X_BIT_MASK
+import org.rsmod.map.square.MapSquareKey.Companion.Z_BIT_MASK
 import java.util.stream.Stream
 
 class MapSquareKeyTest {

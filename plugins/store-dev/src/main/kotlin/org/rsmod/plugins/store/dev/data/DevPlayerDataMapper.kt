@@ -1,7 +1,7 @@
 package org.rsmod.plugins.store.dev.data
 
 import org.rsmod.game.config.GameConfig
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.mob.Player
 import org.rsmod.plugins.store.player.PlayerDataMapper
 import org.rsmod.plugins.store.player.PlayerDataRequest

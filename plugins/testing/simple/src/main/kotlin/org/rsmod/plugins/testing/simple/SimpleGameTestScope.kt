@@ -1,6 +1,6 @@
 package org.rsmod.plugins.testing.simple
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.model.mob.Player
 import org.rsmod.game.model.mob.list.PlayerList

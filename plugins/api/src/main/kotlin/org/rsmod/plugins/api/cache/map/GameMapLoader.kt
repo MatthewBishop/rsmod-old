@@ -2,12 +2,12 @@ package org.rsmod.plugins.api.cache.map
 
 import org.openrs2.buffer.use
 import org.openrs2.cache.Cache
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
-import org.rsmod.game.map.square.MapSquareKey
+import org.rsmod.map.square.MapSquareKey
 import org.rsmod.game.map.util.I14Coordinates
 import org.rsmod.game.map.util.I8Coordinates
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.game.pathfinder.flag.CollisionFlag
 import org.rsmod.plugins.api.cache.map.xtea.XteaRepository
 import org.rsmod.plugins.api.map.GameMap

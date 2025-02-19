@@ -3,9 +3,11 @@ package org.rsmod.game.map.zone
 import it.unimi.dsi.fastutil.bytes.Byte2IntMap
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.map.entity.obj.ObjectKey
-import org.rsmod.game.map.square.MapSquareKey
+import org.rsmod.map.square.MapSquareKey
 import org.rsmod.game.map.util.collect.ImmutableObjectMap
 import org.rsmod.game.map.util.collect.MutableObjectMap
+import org.rsmod.map.zone.ZoneGrid
+import org.rsmod.map.zone.ZoneKey
 
 public data class Zone(public val staticObjects: ImmutableObjectMap) {
 

@@ -1,7 +1,7 @@
 package org.rsmod.plugins.api
 
-import org.rsmod.game.map.CoordGrid
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.game.model.BuildArea
 import org.rsmod.plugins.api.util.BuildAreaUtils
 

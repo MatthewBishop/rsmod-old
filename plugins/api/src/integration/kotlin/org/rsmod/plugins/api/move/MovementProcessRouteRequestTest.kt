@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.route.RouteRequestCoordinates
 import org.rsmod.game.model.route.RouteRequestEntity
 import org.rsmod.plugins.api.map.collision.addObject

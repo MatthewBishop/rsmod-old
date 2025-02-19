@@ -2,7 +2,7 @@ package org.rsmod.game.model.mob
 
 import org.rsmod.game.coroutines.GameCoroutine
 import org.rsmod.game.coroutines.GameCoroutineScope
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.client.MobEntity
 import org.rsmod.game.model.clock.ClockMap
 import org.rsmod.game.model.mob.info.ExtendedInfoMap

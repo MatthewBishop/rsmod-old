@@ -1,6 +1,6 @@
 package org.rsmod.game.model.route
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.mob.move.MovementSpeed
 
 public data class RouteRequestCoordinates(

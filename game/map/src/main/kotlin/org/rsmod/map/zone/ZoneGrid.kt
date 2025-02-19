@@ -1,4 +1,4 @@
-package org.rsmod.game.map.zone
+package org.rsmod.map.zone
 
 class ZoneGrid {
     public companion object {

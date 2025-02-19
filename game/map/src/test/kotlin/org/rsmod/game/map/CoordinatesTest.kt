@@ -4,9 +4,10 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import org.rsmod.game.map.CoordGrid.Companion.LEVEL_BIT_MASK
-import org.rsmod.game.map.CoordGrid.Companion.X_BIT_MASK
-import org.rsmod.game.map.CoordGrid.Companion.Z_BIT_MASK
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.CoordGrid.Companion.LEVEL_BIT_MASK
+import org.rsmod.map.CoordGrid.Companion.X_BIT_MASK
+import org.rsmod.map.CoordGrid.Companion.Z_BIT_MASK
 
 class CoordinatesTest {
 

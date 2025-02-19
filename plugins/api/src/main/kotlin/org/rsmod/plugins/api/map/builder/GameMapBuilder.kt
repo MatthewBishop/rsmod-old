@@ -2,7 +2,7 @@ package org.rsmod.plugins.api.map.builder
 
 import org.rsmod.game.map.util.collect.ImmutableZoneMap
 import org.rsmod.game.map.util.collect.MutableZoneMap
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
 import org.rsmod.plugins.api.map.GameMap
 

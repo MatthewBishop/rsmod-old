@@ -3,8 +3,8 @@ package org.rsmod.plugins.api.session
 import com.github.michaelbull.logging.InlineLogger
 import org.openrs2.crypto.SymmetricKey
 import org.rsmod.game.client.Client
-import org.rsmod.game.map.CoordGrid
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.game.model.mob.list.PlayerList
 import org.rsmod.plugins.api.cache.map.xtea.XteaRepository
 import org.rsmod.plugins.api.net.downstream.GPIInitialization

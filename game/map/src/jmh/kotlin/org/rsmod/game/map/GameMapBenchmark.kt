@@ -19,7 +19,7 @@ import org.rsmod.game.map.entity.obj.ObjectKey
 import org.rsmod.game.map.util.collect.MutableObjectMap
 import org.rsmod.game.map.util.collect.MutableZoneMap
 import org.rsmod.game.map.zone.Zone
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.zone.ZoneKey
 import java.util.concurrent.TimeUnit
 import kotlin.math.sqrt
 

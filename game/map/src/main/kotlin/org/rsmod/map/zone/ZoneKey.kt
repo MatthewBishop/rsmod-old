@@ -1,7 +1,9 @@
-package org.rsmod.game.map
+package org.rsmod.map.zone
+
+import org.rsmod.map.CoordGrid
 
 @JvmInline
-public value class CoordGrid(public val packed: Int) {
+public value class ZoneKey(public val packed: Int) {
 
     public val x: Int get() = (packed shr X_BIT_OFFSET) and X_BIT_MASK
 
@@ -9,27 +11,25 @@ public value class CoordGrid(public val packed: Int) {
 
     public val level: Int get() = (packed shr LEVEL_BIT_OFFSET) and LEVEL_BIT_MASK
 
-    public constructor(x: Int, z: Int, level: Int = 0) : this(pack(x, z, level))
+    public constructor(x: Int, z: Int, level: Int) : this(pack(x, z, level))
 
-    public fun translate(xOffset: Int, zOffset: Int, levelOffset: Int = 0): CoordGrid = CoordGrid(
+    public fun translate(xOffset: Int, zOffset: Int, levelOffset: Int = 0): ZoneKey = ZoneKey(
         x = x + xOffset,
         z = z + zOffset,
         level = level + levelOffset
     )
 
-    public fun translateX(offset: Int): CoordGrid = translate(offset, 0, 0)
+    public fun translateX(offset: Int): ZoneKey = translate(offset, 0, 0)
 
-    public fun translateZ(offset: Int): CoordGrid = translate(0, offset, 0)
+    public fun translateZ(offset: Int): ZoneKey = translate(0, offset, 0)
 
-    public fun translateLevel(offset: Int): CoordGrid = translate(0, 0, offset)
+    public fun translateLevel(offset: Int): ZoneKey = translate(0, 0, offset)
 
-    public operator fun minus(other: CoordGrid): CoordGrid {
-        return translate(-other.x, -other.z, -other.level)
-    }
-
-    public operator fun plus(other: CoordGrid): CoordGrid {
-        return translate(other.x, other.z, other.level)
-    }
+    public fun toCoords(): CoordGrid = CoordGrid(
+        x = x * ZoneGrid.LENGTH,
+        z = z * ZoneGrid.LENGTH,
+        level = level
+    )
 
     public operator fun component1(): Int = x
 
@@ -38,30 +38,30 @@ public value class CoordGrid(public val packed: Int) {
     public operator fun component3(): Int = level
 
     public override fun toString(): String {
-        return "Coordinates(x=$x, z=$z, level=$level)"
+        return "ZoneKey(x=$x, z=$z, level=$level)"
     }
 
-    @Suppress("MemberVisibilityCanBePrivate")
     public companion object {
 
-        public val ZERO: CoordGrid = CoordGrid(0)
-        public val NULL: CoordGrid = CoordGrid(-1)
-
-        public const val X_BIT_COUNT: Int = 14
+        public const val X_BIT_COUNT: Int = 11
         public const val X_BIT_MASK: Int = (1 shl X_BIT_COUNT) - 1
 
-        public const val Z_BIT_COUNT: Int = 14
+        public const val Z_BIT_COUNT: Int = 11
         public const val Z_BIT_MASK: Int = (1 shl Z_BIT_COUNT) - 1
 
         public const val LEVEL_BIT_COUNT: Int = 2
         public const val LEVEL_BIT_MASK: Int = (1 shl LEVEL_BIT_COUNT) - 1
-        public const val LEVEL_COUNT: Int = LEVEL_BIT_MASK + 1
 
         public const val Z_BIT_OFFSET: Int = 0
         public const val X_BIT_OFFSET: Int = Z_BIT_COUNT
         public const val LEVEL_BIT_OFFSET: Int = Z_BIT_COUNT + X_BIT_COUNT
 
-        @Suppress("DuplicatedCode")
+        public fun from(coords: CoordGrid): ZoneKey = ZoneKey(
+            x = coords.x / ZoneGrid.LENGTH,
+            z = coords.z / ZoneGrid.LENGTH,
+            level = coords.level
+        )
+
         private fun pack(x: Int, z: Int, level: Int): Int {
             if (x !in 0..X_BIT_MASK) {
                 throw IllegalArgumentException("`x` value must be within range [0..$X_BIT_MASK].")

@@ -1,6 +1,6 @@
 package org.rsmod.plugins.cache.literal.codec
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 
 public object CacheTypeCoordinate : CacheTypeBaseInt<CoordGrid>(CoordGrid::class.java) {
 

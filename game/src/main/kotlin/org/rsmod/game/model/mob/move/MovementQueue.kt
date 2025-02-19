@@ -1,6 +1,6 @@
 package org.rsmod.game.model.mob.move
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import java.util.LinkedList
 import java.util.Queue
 

@@ -1,6 +1,6 @@
 package org.rsmod.game.config
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.GameEnv
 import java.nio.file.Path
 

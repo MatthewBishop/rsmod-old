@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.map
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.plugins.cache.config.obj.ObjectType
 

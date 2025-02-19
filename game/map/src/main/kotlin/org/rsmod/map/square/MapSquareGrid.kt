@@ -1,4 +1,4 @@
-package org.rsmod.game.map.square
+package org.rsmod.map.square
 
 public class MapSquareGrid {
 

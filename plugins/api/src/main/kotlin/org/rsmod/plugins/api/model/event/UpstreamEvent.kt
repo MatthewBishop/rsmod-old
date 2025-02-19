@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.model.event
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.plugins.api.move.MoveSpeed
 import org.rsmod.plugins.types.NamedComponent
 import org.rsmod.plugins.types.NamedItem

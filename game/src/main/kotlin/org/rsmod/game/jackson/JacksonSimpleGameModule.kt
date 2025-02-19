@@ -2,7 +2,7 @@ package org.rsmod.game.jackson
 
 import com.fasterxml.jackson.databind.module.SimpleModule
 import org.rsmod.game.config.GameConfig
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import jakarta.inject.Singleton
 
 @Singleton

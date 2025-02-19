@@ -1,6 +1,6 @@
 package org.rsmod.game.model.client
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 
 public sealed class Entity(
     public val width: Int,

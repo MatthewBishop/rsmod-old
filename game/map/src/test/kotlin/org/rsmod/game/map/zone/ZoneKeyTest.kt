@@ -3,10 +3,11 @@ package org.rsmod.game.map.zone
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import org.rsmod.game.map.CoordGrid
-import org.rsmod.game.map.zone.ZoneKey.Companion.LEVEL_BIT_MASK
-import org.rsmod.game.map.zone.ZoneKey.Companion.X_BIT_MASK
-import org.rsmod.game.map.zone.ZoneKey.Companion.Z_BIT_MASK
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.zone.ZoneKey
+import org.rsmod.map.zone.ZoneKey.Companion.LEVEL_BIT_MASK
+import org.rsmod.map.zone.ZoneKey.Companion.X_BIT_MASK
+import org.rsmod.map.zone.ZoneKey.Companion.Z_BIT_MASK
 
 class ZoneKeyTest {
 

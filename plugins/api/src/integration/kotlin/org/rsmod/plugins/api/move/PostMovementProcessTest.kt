@@ -2,10 +2,10 @@ package org.rsmod.plugins.api.move
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.CoordGrid
-import org.rsmod.game.map.square.MapSquareGrid
-import org.rsmod.game.map.zone.ZoneGrid
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.square.MapSquareGrid
+import org.rsmod.map.zone.ZoneGrid
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.plugins.api.model.event.MapEvent
 import org.rsmod.plugins.api.net.downstream.RebuildNormal
 import org.rsmod.plugins.api.refreshBuildArea

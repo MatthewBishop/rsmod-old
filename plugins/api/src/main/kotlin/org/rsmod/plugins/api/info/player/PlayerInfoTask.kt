@@ -2,7 +2,7 @@ package org.rsmod.plugins.api.info.player
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.WorldClock
 import org.rsmod.game.model.mob.Player
 import org.rsmod.game.model.mob.info.ExtendedInfoTypeSet

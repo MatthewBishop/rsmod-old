@@ -1,6 +1,6 @@
 package org.rsmod.game.model
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 
 @JvmInline
 public value class BuildArea(public val base: CoordGrid) {

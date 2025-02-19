@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.map.collision
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
 import org.rsmod.game.pathfinder.flag.CollisionFlag
 import org.rsmod.plugins.api.map.GameObject

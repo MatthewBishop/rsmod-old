@@ -1,6 +1,6 @@
 package org.rsmod.game.map.entity.obj
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 
 public data class ObjectEntry(
     public val slot: Int,

@@ -3,7 +3,7 @@ package org.rsmod.game.jackson
 import com.fasterxml.jackson.core.JsonGenerator
 import com.fasterxml.jackson.databind.SerializerProvider
 import com.fasterxml.jackson.databind.ser.std.StdSerializer
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 
 public object JacksonCoordinatesSerializer : StdSerializer<CoordGrid>(CoordGrid::class.java) {
 

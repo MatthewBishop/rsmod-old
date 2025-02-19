@@ -1,7 +1,7 @@
 package org.rsmod.plugins.api.cache.map.xtea
 
 import org.openrs2.crypto.SymmetricKey
-import org.rsmod.game.map.square.MapSquareKey
+import org.rsmod.map.square.MapSquareKey
 
 public class XteaRepository(
     private val xtea: MutableMap<MapSquareKey, SymmetricKey> = mutableMapOf()

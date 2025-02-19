@@ -3,7 +3,7 @@ package org.rsmod.plugins.api.pathfinder
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.model.client.PlayerEntity

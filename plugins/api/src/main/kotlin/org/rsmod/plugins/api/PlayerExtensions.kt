@@ -1,7 +1,7 @@
 package org.rsmod.plugins.api
 
 import com.github.michaelbull.logging.InlineLogger
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.model.mob.Player
 import org.rsmod.plugins.api.model.MessageGameType
 import org.rsmod.plugins.api.model.event.TypePlayerEvent

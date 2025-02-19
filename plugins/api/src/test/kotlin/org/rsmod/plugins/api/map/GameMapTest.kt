@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.map.entity.obj.ObjectKey
 import org.rsmod.game.map.util.collect.ImmutableObjectMap
 import org.rsmod.game.map.util.collect.ImmutableZoneMap
 import org.rsmod.game.map.util.collect.MutableZoneMap
 import org.rsmod.game.map.zone.Zone
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
 
 class GameMapTest {

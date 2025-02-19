@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.pathfinder
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 import org.rsmod.game.pathfinder.LinePathFinder
 import org.rsmod.game.pathfinder.RayCast
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap

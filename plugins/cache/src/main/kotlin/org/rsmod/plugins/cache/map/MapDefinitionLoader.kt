@@ -2,8 +2,8 @@ package org.rsmod.plugins.cache.map
 
 import io.netty.buffer.ByteBuf
 import org.openrs2.buffer.readUnsignedShortSmart
-import org.rsmod.game.map.CoordGrid
-import org.rsmod.game.map.square.MapSquareGrid
+import org.rsmod.map.CoordGrid
+import org.rsmod.map.square.MapSquareGrid
 import org.rsmod.game.map.util.I14Coordinates
 import org.rsmod.plugins.cache.map.loc.MapLoc
 import org.rsmod.plugins.cache.map.loc.MapLocDefinition

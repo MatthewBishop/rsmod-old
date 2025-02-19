@@ -1,6 +1,6 @@
-package org.rsmod.game.map.square
+package org.rsmod.map.square
 
-import org.rsmod.game.map.CoordGrid
+import org.rsmod.map.CoordGrid
 
 @JvmInline
 public value class MapSquareKey(public val id: Int) {

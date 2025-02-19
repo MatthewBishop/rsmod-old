@@ -1,8 +1,8 @@
 package org.rsmod.plugins.api.move
 
 import org.openrs2.crypto.SymmetricKey
-import org.rsmod.game.map.square.MapSquareKey
-import org.rsmod.game.map.zone.ZoneKey
+import org.rsmod.map.square.MapSquareKey
+import org.rsmod.map.zone.ZoneKey
 import org.rsmod.game.model.mob.Player
 import org.rsmod.game.model.mob.list.PlayerList
 import org.rsmod.game.model.mob.list.forEachNotNull
