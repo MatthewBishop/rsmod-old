@@ -1,7 +1,6 @@
 package org.rsmod.game.map.zone
 
 import org.rsmod.game.map.Coordinates
-import org.rsmod.game.map.square.MapSquareKey
 
 @JvmInline
 public value class ZoneKey(public val packed: Int) {
@@ -27,25 +26,10 @@ public value class ZoneKey(public val packed: Int) {
     public fun translateLevel(offset: Int): ZoneKey = translate(0, 0, offset)
 
     public fun toCoords(): Coordinates = Coordinates(
-        x = x * Zone.SIZE,
-        z = z * Zone.SIZE,
+        x = x * ZoneGrid.LENGTH,
+        z = z * ZoneGrid.LENGTH,
         level = level
     )
-
-    public fun toViewport(zoneRadius: Int): List<MapSquareKey> {
-        val lx = (x - zoneRadius) / Zone.SIZE
-        val lz = (z - zoneRadius) / Zone.SIZE
-        val rx = (x + zoneRadius) / Zone.SIZE
-        val rz = (z + zoneRadius) / Zone.SIZE
-        val viewport = mutableListOf<MapSquareKey>()
-        for (mx in lx..rx) {
-            for (mz in lz..rz) {
-                val key = MapSquareKey(mx, mz)
-                viewport += key
-            }
-        }
-        return viewport
-    }
 
     public operator fun component1(): Int = x
 
@@ -73,8 +57,8 @@ public value class ZoneKey(public val packed: Int) {
         public const val LEVEL_BIT_OFFSET: Int = Z_BIT_COUNT + X_BIT_COUNT
 
         public fun from(coords: Coordinates): ZoneKey = ZoneKey(
-            x = coords.x / Zone.SIZE,
-            z = coords.z / Zone.SIZE,
+            x = coords.x / ZoneGrid.LENGTH,
+            z = coords.z / ZoneGrid.LENGTH,
             level = coords.level
         )
 

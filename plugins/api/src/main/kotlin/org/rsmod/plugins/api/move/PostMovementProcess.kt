@@ -14,6 +14,7 @@ import org.rsmod.plugins.api.refreshBuildArea
 import org.rsmod.plugins.api.util.BuildAreaUtils
 import jakarta.inject.Inject
 import jakarta.inject.Singleton
+import org.rsmod.game.map.zone.toViewport
 
 @Singleton
 public class PostMovementProcess @Inject constructor(

@@ -14,6 +14,7 @@ import org.rsmod.plugins.api.util.BuildAreaUtils
 import org.rsmod.plugins.info.model.coord.LowResCoord
 import jakarta.inject.Inject
 import jakarta.inject.Singleton
+import org.rsmod.game.map.zone.toViewport
 
 private val logger = InlineLogger()
 
