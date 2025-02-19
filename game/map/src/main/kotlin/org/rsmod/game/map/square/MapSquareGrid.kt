@@ -1,9 +1,9 @@
 package org.rsmod.game.map.square
 
-public class MapSquare {
+public class MapSquareGrid {
 
     public companion object {
 
-        public const val SIZE: Int = 64
+        public const val LENGTH: Int = 64
     }
 }

@@ -12,8 +12,8 @@ public value class MapSquareKey(public val id: Int) {
     public constructor(x: Int, z: Int) : this(pack(x, z))
 
     public fun toCoords(level: Int): Coordinates = Coordinates(
-        x = x * MapSquare.SIZE,
-        z = z * MapSquare.SIZE,
+        x = x * MapSquareGrid.LENGTH,
+        z = z * MapSquareGrid.LENGTH,
         level = level
     )
 
@@ -38,8 +38,8 @@ public value class MapSquareKey(public val id: Int) {
         public const val X_BIT_OFFSET: Int = Z_BIT_COUNT
 
         public fun from(coords: Coordinates): MapSquareKey = MapSquareKey(
-            x = coords.x / MapSquare.SIZE,
-            z = coords.z / MapSquare.SIZE
+            x = coords.x / MapSquareGrid.LENGTH,
+            z = coords.z / MapSquareGrid.LENGTH
         )
 
         private fun pack(x: Int, z: Int): Int {

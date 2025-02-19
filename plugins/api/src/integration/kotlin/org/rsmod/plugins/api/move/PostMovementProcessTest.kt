@@ -3,7 +3,7 @@ package org.rsmod.plugins.api.move
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.rsmod.game.map.Coordinates
-import org.rsmod.game.map.square.MapSquare
+import org.rsmod.game.map.square.MapSquareGrid
 import org.rsmod.game.map.zone.Zone
 import org.rsmod.game.map.zone.ZoneKey
 import org.rsmod.plugins.api.model.event.MapEvent
@@ -136,14 +136,14 @@ class PostMovementProcessTest {
         val process = PostMovementProcess(playerList, xteaRepository)
         val start = Coordinates(3200, 3200)
         withPlayer {
-            coords = start.translateX(MapSquare.SIZE - 1)
+            coords = start.translateX(MapSquareGrid.LENGTH - 1)
             prevCoords = start
             assertNull(MapEvent.MapSquareChange::class)
             process.execute()
             assertNull(MapEvent.MapSquareChange::class)
         }
         withPlayer {
-            coords = start.translateZ(MapSquare.SIZE - 1)
+            coords = start.translateZ(MapSquareGrid.LENGTH - 1)
             prevCoords = start
             assertNull(MapEvent.MapSquareChange::class)
             process.execute()
@@ -169,14 +169,14 @@ class PostMovementProcessTest {
         val process = PostMovementProcess(playerList, xteaRepository)
         val start = Coordinates(3200, 3200)
         withPlayer {
-            coords = start.translateX(MapSquare.SIZE)
+            coords = start.translateX(MapSquareGrid.LENGTH)
             prevCoords = start
             assertNull(MapEvent.MapSquareChange::class)
             process.execute()
             assertNotNull(MapEvent.MapSquareChange::class)
         }
         withPlayer {
-            coords = start.translateZ(MapSquare.SIZE)
+            coords = start.translateZ(MapSquareGrid.LENGTH)
             prevCoords = start
             assertNull(MapEvent.MapSquareChange::class)
             process.execute()

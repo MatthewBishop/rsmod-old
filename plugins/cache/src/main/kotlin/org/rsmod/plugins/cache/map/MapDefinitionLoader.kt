@@ -3,7 +3,7 @@ package org.rsmod.plugins.cache.map
 import io.netty.buffer.ByteBuf
 import org.openrs2.buffer.readUnsignedShortSmart
 import org.rsmod.game.map.Coordinates
-import org.rsmod.game.map.square.MapSquare
+import org.rsmod.game.map.square.MapSquareGrid
 import org.rsmod.game.map.util.I14Coordinates
 import org.rsmod.plugins.cache.map.loc.MapLoc
 import org.rsmod.plugins.cache.map.loc.MapLocDefinition
@@ -19,8 +19,8 @@ public object MapDefinitionLoader {
         val underlays = mutableMapOf<I14Coordinates, TileUnderlay>()
         val rules = mutableMapOf<I14Coordinates, Byte>()
         for (level in 0 until Coordinates.LEVEL_COUNT) {
-            for (x in 0 until MapSquare.SIZE) {
-                for (z in 0 until MapSquare.SIZE) {
+            for (x in 0 until MapSquareGrid.LENGTH) {
+                for (z in 0 until MapSquareGrid.LENGTH) {
                     while (buf.isReadable) {
                         val opcode = buf.readUnsignedShort()
                         when {
