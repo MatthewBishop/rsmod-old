@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.DeserializationContext
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer
 import org.rsmod.game.config.GameConfig
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.GameEnv
 import java.nio.file.Path
 
@@ -16,7 +16,7 @@ public object JacksonGameConfigDeserializer : StdDeserializer<GameConfig>(GameCo
     private const val DEFAULT_WORLD_ID = 1
 
     private val DEFAULT_GAME_ENV = GameEnv.Dev
-    private val DEFAULT_SPAWN = Coordinates(3200, 3200)
+    private val DEFAULT_SPAWN = CoordGrid(3200, 3200)
 
     private val ROOT_PATH = Path.of("./")
 
@@ -36,8 +36,8 @@ public object JacksonGameConfigDeserializer : StdDeserializer<GameConfig>(GameCo
         )
     }
 
-    private fun JsonNode.toCoordinates(ctxt: DeserializationContext): Coordinates? {
-        return ctxt.readTreeAsValue(this, Coordinates::class.java)
+    private fun JsonNode.toCoordinates(ctxt: DeserializationContext): CoordGrid? {
+        return ctxt.readTreeAsValue(this, CoordGrid::class.java)
     }
 
     private fun String.toGameEnv(): GameEnv = when (val name = lowercase()) {

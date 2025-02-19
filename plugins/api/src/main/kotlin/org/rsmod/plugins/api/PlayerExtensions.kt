@@ -1,7 +1,7 @@
 package org.rsmod.plugins.api
 
 import com.github.michaelbull.logging.InlineLogger
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.mob.Player
 import org.rsmod.plugins.api.model.MessageGameType
 import org.rsmod.plugins.api.model.event.TypePlayerEvent
@@ -27,7 +27,7 @@ public fun Player.setMinimapFlag(x: Int, z: Int) {
     downstream += MinimapFlagSet(dx, dz)
 }
 
-public fun Player.setMinimapFlag(coords: Coordinates) {
+public fun Player.setMinimapFlag(coords: CoordGrid) {
     setMinimapFlag(coords.x, coords.z)
 }
 
@@ -35,7 +35,7 @@ public fun Player.clearMinimapFlag() {
     downstream += MinimapFlagSet(255, 255)
 }
 
-public fun Player.displace(destination: Coordinates) {
+public fun Player.displace(destination: CoordGrid) {
     coords = destination
     movement.lastStep = destination
     sendTempMovement(MoveSpeed.Displace)
@@ -64,7 +64,7 @@ public fun <T : TypePlayerKeyedEvent> Player.publish(id: Number, event: T) {
     events.add(id.toLong(), event)
 }
 
-public fun Player.refreshBuildArea(center: Coordinates) {
+public fun Player.refreshBuildArea(center: CoordGrid) {
     val buildArea = center.toBuildArea()
     this.buildArea = buildArea
 }

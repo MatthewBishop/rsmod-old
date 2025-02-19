@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.pathfinder
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
 import org.rsmod.game.pathfinder.reach.ReachStrategy
@@ -94,7 +94,7 @@ public class BoundValidator @Inject constructor(private val flags: CollisionFlag
     private companion object {
 
         @Suppress("NOTHING_TO_INLINE")
-        private inline fun assertLevels(a: Coordinates, b: Coordinates) {
+        private inline fun assertLevels(a: CoordGrid, b: CoordGrid) {
             require(a.level == b.level) { "`source` and `target` must be on same level." }
         }
     }

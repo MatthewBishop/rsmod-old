@@ -7,7 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.plugins.cache.literal.CacheTypeLiteral
 import org.rsmod.plugins.types.NamedComponent
 import org.rsmod.plugins.types.NamedItem
@@ -57,7 +57,7 @@ class ParamMapTest {
                     params.getValue(ITEM_PARAM)
                 ),
                 Arguments.of(
-                    ParamMap(mapOf(COORDS_PARAM to Coordinates(3200, 3200))),
+                    ParamMap(mapOf(COORDS_PARAM to CoordGrid(3200, 3200))),
                     params.getValue(COORDS_PARAM)
                 )
             )

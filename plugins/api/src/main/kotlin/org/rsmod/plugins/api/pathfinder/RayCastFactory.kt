@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.pathfinder
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.pathfinder.LinePathFinder
 import org.rsmod.game.pathfinder.RayCast
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
@@ -11,8 +11,8 @@ public class RayCastFactory @Inject constructor(flags: CollisionFlagMap) {
     private val linePathFinder: LinePathFinder = LinePathFinder(flags)
 
     public fun createLineOfSight(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         srcSize: Int = 1,
         destWidth: Int = 0,
         destHeight: Int = 0
@@ -31,8 +31,8 @@ public class RayCastFactory @Inject constructor(flags: CollisionFlagMap) {
     }
 
     public fun createLineOfWalk(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         srcSize: Int = 1,
         destWidth: Int = 0,
         destHeight: Int = 0

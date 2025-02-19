@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.route.RouteRequestCoordinates
 import org.rsmod.plugins.api.displace
 import org.rsmod.plugins.api.net.info.ExtendedPlayerInfo
@@ -17,7 +17,7 @@ class MovementProcessTest {
     @Test
     fun GameTestState.testWaypoints() = runGameTest {
         val process = MovementProcess(playerList, routeFactory, stepFactory)
-        val start = Coordinates(3194, 3199)
+        val start = CoordGrid(3194, 3199)
         val waypoints = listOf(
             start.translate(xOffset = 1, zOffset = 0),
             start.translate(xOffset = 1, zOffset = 1),
@@ -55,8 +55,8 @@ class MovementProcessTest {
     fun GameTestState.testPrematureWaypointRemoval() = runGameTest {
         val process = MovementProcess(playerList, routeFactory, stepFactory)
         // North of lumbridge fountain.
-        val start = Coordinates(3221, 3228)
-        val dest = Coordinates(3220, 3226)
+        val start = CoordGrid(3221, 3228)
+        val dest = CoordGrid(3220, 3226)
         val waypoints = listOf(
             start.translate(xOffset = -1, zOffset = 0),
             dest
@@ -81,7 +81,7 @@ class MovementProcessTest {
     @Test
     fun GameTestState.testOneTileRun() = runGameTest {
         val process = MovementProcess(playerList, routeFactory, stepFactory)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         /* verify running > 1 tile does _not_ queue extended-info update */
         withPlayer {
             coords = start
@@ -114,8 +114,8 @@ class MovementProcessTest {
     @Test
     fun GameTestState.testLogInWalkEmulation() = runGameTest {
         val process = MovementProcess(playerList, routeFactory, stepFactory)
-        val startCoords = Coordinates(3357, 3141)
-        val destination = Coordinates(3384, 3155)
+        val startCoords = CoordGrid(3357, 3141)
+        val destination = CoordGrid(3384, 3155)
         withPlayer {
             coords = startCoords
             routeRequest = RouteRequestCoordinates(
@@ -125,10 +125,10 @@ class MovementProcessTest {
             )
             // TODO: set perm speed to "run" as the mechanic _should_ force us to "walk"
             /* `lastStep` should be zero on log-in */
-            check(movement.lastStep == Coordinates.ZERO)
+            check(movement.lastStep == CoordGrid.ZERO)
             assertEquals(startCoords, coords)
             /* path blocked by a plant! */
-            val expectedDest = Coordinates(3275, 3059)
+            val expectedDest = CoordGrid(3275, 3059)
             val expectedSteps = 82
             repeat(expectedSteps) {
                 process.execute()
@@ -187,7 +187,7 @@ class MovementProcessTest {
         // Utilize a new collision state so that collision flags do not
         // interfere with test.
         withCollisionState {
-            val startCoords = Coordinates(3200, 3200, 0)
+            val startCoords = CoordGrid(3200, 3200, 0)
             // Allocate an empty zone with no collision flags.
             it.collision.allocateIfAbsent(startCoords.x, startCoords.z, startCoords.level)
             val process = MovementProcess(playerList, it.routeFactory, it.stepFactory)

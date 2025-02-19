@@ -1,7 +1,7 @@
 package org.rsmod.plugins.store.dev.data
 
 import org.rsmod.game.config.GameConfig
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.mob.Player
 import org.rsmod.plugins.store.player.PlayerDataMapper
 import org.rsmod.plugins.store.player.PlayerDataRequest
@@ -38,8 +38,8 @@ public class DevPlayerDataMapper @Inject constructor(
     }
 
     private fun IntArray.toCoordinates() = when (size) {
-        2 -> Coordinates(this[0], this[1])
-        3 -> Coordinates(this[0], this[1], this[2])
+        2 -> CoordGrid(this[0], this[1])
+        3 -> CoordGrid(this[0], this[1], this[2])
         else -> error("Invalid coordinate values: ${contentToString()}.")
     }
 }

@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.model.event
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.plugins.api.move.MoveSpeed
 import org.rsmod.plugins.types.NamedComponent
 import org.rsmod.plugins.types.NamedItem
@@ -9,7 +9,7 @@ public object UpstreamEvent {
 
     public data class MoveGameClick(
         val speed: SpeedRequest,
-        val coords: Coordinates
+        val coords: CoordGrid
     ) : TypePlayerEvent {
 
         public fun moveSpeed(): MoveSpeed? = when (speed) {

@@ -1,13 +1,13 @@
 package org.rsmod.game.model.client
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 
 public abstract class MobEntity(
     size: Int,
     public var index: Int = INVALID_INDEX
 ) : Entity(width = size, height = size) {
 
-    public var prevCoords: Coordinates = Coordinates.ZERO
+    public var prevCoords: CoordGrid = CoordGrid.ZERO
 
     public companion object {
 

@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.pathfinder
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.pathfinder.LineValidator
 import org.rsmod.game.pathfinder.StepValidator
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
@@ -13,8 +13,8 @@ public class PathValidator @Inject constructor(flags: CollisionFlagMap) {
     private val stepValidator: StepValidator = StepValidator(flags)
 
     public fun hasLineOfSight(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         srcSize: Int = 1,
         destWidth: Int = 0,
         destHeight: Int = 0
@@ -33,8 +33,8 @@ public class PathValidator @Inject constructor(flags: CollisionFlagMap) {
     }
 
     public fun hasLineOfWalk(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         srcSize: Int = 1,
         destWidth: Int = 0,
         destHeight: Int = 0
@@ -53,7 +53,7 @@ public class PathValidator @Inject constructor(flags: CollisionFlagMap) {
     }
 
     public fun canStep(
-        source: Coordinates,
+        source: CoordGrid,
         direction: Direction,
         extraFlag: Int,
         srcSize: Int = 1,

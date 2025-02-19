@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.pathfinder
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.pathfinder.PathFinder
 import org.rsmod.game.pathfinder.Route
@@ -19,8 +19,8 @@ public class RouteFactory @Inject constructor(flags: CollisionFlagMap) {
     private var asynchronous: Boolean = false
 
     public fun create(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         collision: CollisionType = CollisionType.Normal,
         async: Boolean = asynchronous
     ): Route = with(pathFinder(async)) {
@@ -39,7 +39,7 @@ public class RouteFactory @Inject constructor(flags: CollisionFlagMap) {
 
     public fun create(
         source: Entity,
-        destination: Coordinates,
+        destination: CoordGrid,
         collision: CollisionType = CollisionType.Normal,
         async: Boolean = asynchronous
     ): Route = with(pathFinder(async)) {

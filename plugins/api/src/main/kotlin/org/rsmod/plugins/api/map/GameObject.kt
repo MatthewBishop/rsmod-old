@@ -1,12 +1,12 @@
 package org.rsmod.plugins.api.map
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.plugins.cache.config.obj.ObjectType
 
 public class GameObject(
     public val type: ObjectType,
-    public val coords: Coordinates,
+    public val coords: CoordGrid,
     public val entity: ObjectEntity
 ) {
 

@@ -1,6 +1,6 @@
 package org.rsmod.game.map.square
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 
 @JvmInline
 public value class MapSquareKey(public val id: Int) {
@@ -11,7 +11,7 @@ public value class MapSquareKey(public val id: Int) {
 
     public constructor(x: Int, z: Int) : this(pack(x, z))
 
-    public fun toCoords(level: Int): Coordinates = Coordinates(
+    public fun toCoords(level: Int): CoordGrid = CoordGrid(
         x = x * MapSquareGrid.LENGTH,
         z = z * MapSquareGrid.LENGTH,
         level = level
@@ -37,7 +37,7 @@ public value class MapSquareKey(public val id: Int) {
         public const val Z_BIT_OFFSET: Int = 0
         public const val X_BIT_OFFSET: Int = Z_BIT_COUNT
 
-        public fun from(coords: Coordinates): MapSquareKey = MapSquareKey(
+        public fun from(coords: CoordGrid): MapSquareKey = MapSquareKey(
             x = coords.x / MapSquareGrid.LENGTH,
             z = coords.z / MapSquareGrid.LENGTH
         )

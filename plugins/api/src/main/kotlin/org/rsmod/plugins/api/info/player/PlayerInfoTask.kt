@@ -2,7 +2,7 @@ package org.rsmod.plugins.api.info.player
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.WorldClock
 import org.rsmod.game.model.mob.Player
 import org.rsmod.game.model.mob.info.ExtendedInfoTypeSet
@@ -205,7 +205,7 @@ public class PlayerInfoTask @Inject constructor(
         private val TRANSLATION_TABLE_BACK = intArrayOf(-1, -1, -1, -1, 2, -1, 3, 5, 0, 4, 6, 1)
         private val DEFAULT_LOOKS = intArrayOf(9, 14, 109, 26, 33, 36, 42)
 
-        private fun Coordinates.toHighResCoords(): HighResCoord {
+        private fun CoordGrid.toHighResCoords(): HighResCoord {
             return HighResCoord(x, z, level)
         }
     }

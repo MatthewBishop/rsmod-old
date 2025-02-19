@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.map
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.map.entity.obj.ObjectEntry
 import org.rsmod.game.map.entity.obj.ObjectKey
@@ -22,7 +22,7 @@ public class GameMap(
         staticZones[key.packed]
     }
 
-    public fun objectEntries(coords: Coordinates): List<ObjectEntry> {
+    public fun objectEntries(coords: CoordGrid): List<ObjectEntry> {
         val key = ZoneKey.from(coords)
         val zone = this[key] ?: return emptyList()
         val zoneCoords = key.toCoords()

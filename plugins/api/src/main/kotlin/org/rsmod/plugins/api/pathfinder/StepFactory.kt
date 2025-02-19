@@ -1,6 +1,6 @@
 package org.rsmod.plugins.api.pathfinder
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.pathfinder.StepValidator
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
 import jakarta.inject.Inject
@@ -11,18 +11,18 @@ public class StepFactory @Inject constructor(flags: CollisionFlagMap) {
     private val validator: StepValidator = StepValidator(flags)
 
     public fun createPath(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         size: Int = 1,
         extraFlag: Int = 0,
         collision: CollisionType
-    ): List<Coordinates> {
-        val coords = mutableListOf<Coordinates>()
-        var curr = Coordinates(source.packed)
+    ): List<CoordGrid> {
+        val coords = mutableListOf<CoordGrid>()
+        var curr = CoordGrid(source.packed)
         for (i in 0 until 128 * 128) {
             if (curr == destination) break
             curr = validated(curr, destination, size, extraFlag, collision)
-            if (curr == Coordinates.NULL) break
+            if (curr == CoordGrid.NULL) break
             coords += curr
         }
         return coords
@@ -32,7 +32,7 @@ public class StepFactory @Inject constructor(flags: CollisionFlagMap) {
      * @return the next available step in between [source] and [destination] _without_
      * validating that said step is not blocked by any possible collision flags.
      */
-    public fun unvalidated(source: Coordinates, destination: Coordinates): Coordinates {
+    public fun unvalidated(source: CoordGrid, destination: CoordGrid): CoordGrid {
         require(source != destination) { "`source` must not be equal to `destination`." }
         val offX = (destination.x - source.x).sign
         val offZ = (destination.z - source.z).sign
@@ -41,16 +41,16 @@ public class StepFactory @Inject constructor(flags: CollisionFlagMap) {
 
     /**
      * @return The next _validated_ step in between [source] and [destination].
-     * [Coordinates.NULL] if no tile could be validated between the two given
+     * [CoordGrid.NULL] if no tile could be validated between the two given
      * coordinates.
      */
     public fun validated(
-        source: Coordinates,
-        destination: Coordinates,
+        source: CoordGrid,
+        destination: CoordGrid,
         size: Int = 1,
         extraFlag: Int = 0,
         collision: CollisionType = CollisionType.Normal
-    ): Coordinates {
+    ): CoordGrid {
         require(source != destination) { "`source` must not be equal to `destination`." }
         val level = source.level
         val signX = (destination.x - source.x).sign
@@ -92,6 +92,6 @@ public class StepFactory @Inject constructor(flags: CollisionFlagMap) {
         )
         if (vertical) return source.translate(0, signZ)
 
-        return Coordinates.NULL
+        return CoordGrid.NULL
     }
 }

@@ -2,7 +2,7 @@ package org.rsmod.plugins.api.cache.map
 
 import org.openrs2.buffer.use
 import org.openrs2.cache.Cache
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.map.square.MapSquareKey
 import org.rsmod.game.map.util.I14Coordinates
@@ -101,7 +101,7 @@ public object GameMapLoader {
              * We add them to a separate collection in our zone builder with
              * their original zone-local coordinates.
              */
-            if (visualLevel !in 0 until Coordinates.LEVEL_COUNT) {
+            if (visualLevel !in 0 until CoordGrid.LEVEL_COUNT) {
                 zone.addLinkBelow(local.toI8Coords(), slot.id, obj.entity)
                 return@forEach
             }
@@ -110,7 +110,7 @@ public object GameMapLoader {
         }
     }
 
-    private fun I14Coordinates.toCoords(key: MapSquareKey): Coordinates {
+    private fun I14Coordinates.toCoords(key: MapSquareKey): CoordGrid {
         return key.toCoords(level).translate(x, z)
     }
 
@@ -118,13 +118,13 @@ public object GameMapLoader {
         return I8Coordinates.convert(x, z, level)
     }
 
-    private fun Coordinates.toI8Coords(): I8Coordinates {
+    private fun CoordGrid.toI8Coords(): I8Coordinates {
         return I8Coordinates.convert(x, z, level)
     }
 
     @Suppress("NOTHING_TO_INLINE")
     private inline fun rule(coords: I14Coordinates, rule: Int, ruleAbove: () -> Int): Int {
-        if (coords.level >= Coordinates.LEVEL_COUNT - 1) return rule
+        if (coords.level >= CoordGrid.LEVEL_COUNT - 1) return rule
         val aboveRule = ruleAbove()
         return if ((aboveRule and LINK_BELOW_BIT_FLAG) != 0) {
             aboveRule

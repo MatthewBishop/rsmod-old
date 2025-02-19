@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.client.MobEntity
 import org.rsmod.game.model.mob.Player
 import org.rsmod.game.model.mob.list.PlayerList
@@ -84,7 +84,7 @@ public class MovementProcess @Inject constructor(
                 waypoint = movement.peek() ?: break
             }
             val step = stepFactory.validated(curr, waypoint, extraFlag = EXTRA_CLIP_VALIDATION)
-            if (step == Coordinates.NULL) break
+            if (step == CoordGrid.NULL) break
             stepCount++
             curr = step
         }
@@ -111,7 +111,7 @@ public class MovementProcess @Inject constructor(
     // TODO: stepFactory.create(Entity) function
     // TODO: stepFactory.create(GameObject) function
     @Suppress("UNUSED_PARAMETER")
-    private fun RouteRequest.displaceDestination(source: MobEntity): Coordinates = when (this) {
+    private fun RouteRequest.displaceDestination(source: MobEntity): CoordGrid = when (this) {
         is RouteRequestCoordinates -> destination
         is RouteRequestEntity -> destination.coords
         is RouteRequestGameObject -> destination.coords
@@ -133,7 +133,7 @@ public class MovementProcess @Inject constructor(
      * @see [Route.failed]
      */
     private fun Player.emulateLogInWalkTo() {
-        if (movement.lastStep != Coordinates.ZERO) return
+        if (movement.lastStep != CoordGrid.ZERO) return
         movement.add(movement.lastStep) // Emulate walk-to Coords[0,0] "mechanic"
     }
 
@@ -144,7 +144,7 @@ public class MovementProcess @Inject constructor(
         private const val EXTRA_CLIP_VALIDATION: Int = CollisionFlag.BLOCK_PLAYERS
 
         private fun MovementQueue.addAll(route: Route) {
-            this += route.map { Coordinates(it.x, it.z, it.level) }
+            this += route.map { CoordGrid(it.x, it.z, it.level) }
         }
     }
 }

@@ -3,7 +3,7 @@ package org.rsmod.plugins.api.session
 import com.github.michaelbull.logging.InlineLogger
 import org.openrs2.crypto.SymmetricKey
 import org.rsmod.game.client.Client
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.zone.ZoneKey
 import org.rsmod.game.model.mob.list.PlayerList
 import org.rsmod.plugins.api.cache.map.xtea.XteaRepository
@@ -41,7 +41,7 @@ public class ClientGameSession @Inject constructor(
         logger.debug { "Client disconnected: $client." }
     }
 
-    private fun createRebuildNormal(playerIndex: Int, playerCoords: Coordinates): RebuildNormal {
+    private fun createRebuildNormal(playerIndex: Int, playerCoords: CoordGrid): RebuildNormal {
         val zone = ZoneKey.from(playerCoords)
         val xtea = mutableListOf<Int>()
         zone.toViewport(BuildAreaUtils.ZONE_VIEW_RADIUS).forEach {

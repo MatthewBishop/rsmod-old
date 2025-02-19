@@ -2,7 +2,7 @@ package org.rsmod.game.model.mob
 
 import org.rsmod.game.coroutines.GameCoroutine
 import org.rsmod.game.coroutines.GameCoroutineScope
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.client.MobEntity
 import org.rsmod.game.model.clock.ClockMap
 import org.rsmod.game.model.mob.info.ExtendedInfoMap
@@ -27,11 +27,11 @@ public sealed class Mob(
         get() = entity.index
         set(value) { entity.index = value }
 
-    public var coords: Coordinates
+    public var coords: CoordGrid
         get() = entity.coords
         set(value) { entity.coords = value }
 
-    public var prevCoords: Coordinates
+    public var prevCoords: CoordGrid
         get() = entity.prevCoords
         set(value) { entity.prevCoords = value }
 

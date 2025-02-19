@@ -1,6 +1,6 @@
 package org.rsmod.plugins.testing.simple
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.model.mob.Player
 import org.rsmod.game.model.mob.list.PlayerList
@@ -23,7 +23,7 @@ public class SimpleGameTestScope {
     public fun createEntity(): Entity = backingScope.createEntity()
 
     public fun createGameObject(
-        coords: Coordinates,
+        coords: CoordGrid,
         rot: Int = 0,
         shape: ObjectShape = ObjectShape.CenterpieceStraight,
         init: ObjectTypeBuilder.() -> Unit

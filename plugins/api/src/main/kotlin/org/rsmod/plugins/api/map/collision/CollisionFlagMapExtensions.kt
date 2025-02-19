@@ -1,13 +1,13 @@
 package org.rsmod.plugins.api.map.collision
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.pathfinder.collision.CollisionFlagMap
 import org.rsmod.game.pathfinder.flag.CollisionFlag
 import org.rsmod.plugins.api.map.GameObject
 import org.rsmod.plugins.api.map.ObjectShape
 import org.rsmod.plugins.api.map.ObjectSlot
 
-public fun CollisionFlagMap.get(coords: Coordinates): Int {
+public fun CollisionFlagMap.get(coords: CoordGrid): Int {
     return get(coords.x, coords.z, coords.level)
 }
 
@@ -45,7 +45,7 @@ private fun CollisionFlagMap.toggleObject(obj: GameObject, add: Boolean) {
 }
 
 private fun CollisionFlagMap.toggleMain(
-    coords: Coordinates,
+    coords: CoordGrid,
     width: Int,
     length: Int,
     blockPath: Boolean,
@@ -68,7 +68,7 @@ private fun CollisionFlagMap.toggleMain(
 
 @Suppress("CascadeIf")
 private fun CollisionFlagMap.toggleWall(
-    coords: Coordinates,
+    coords: CoordGrid,
     rotation: Int,
     shape: ObjectShape,
     blockProjectile: Boolean,
@@ -198,11 +198,11 @@ private fun CollisionFlagMap.toggleWall(
     }
 }
 
-private fun CollisionFlagMap.toggleGroundDetail(coords: Coordinates, add: Boolean) {
+private fun CollisionFlagMap.toggleGroundDetail(coords: CoordGrid, add: Boolean) {
     toggle(coords, CollisionFlag.FLOOR_DECORATION, add)
 }
 
-private fun CollisionFlagMap.toggle(coords: Coordinates, mask: Int, add: Boolean) {
+private fun CollisionFlagMap.toggle(coords: CoordGrid, mask: Int, add: Boolean) {
     if (add) {
         add(coords.x, coords.z, coords.level, mask)
     } else {

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.map.entity.obj.ObjectKey
 import org.rsmod.game.map.util.collect.ImmutableObjectMap
@@ -19,8 +19,8 @@ class GameMapTest {
     @Test
     fun testGetEmptyObjectEntries() {
         val map = GameMap(ImmutableZoneMap.empty(), MutableZoneMap.empty(), CollisionFlagMap())
-        assertTrue(map.objectEntries(ZoneKey.from(Coordinates(3200, 3200))).isEmpty())
-        assertTrue(map.objectEntries(Coordinates(3200, 3200)).isEmpty())
+        assertTrue(map.objectEntries(ZoneKey.from(CoordGrid(3200, 3200))).isEmpty())
+        assertTrue(map.objectEntries(CoordGrid(3200, 3200)).isEmpty())
     }
 
     @Test

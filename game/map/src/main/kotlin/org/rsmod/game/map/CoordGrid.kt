@@ -1,7 +1,7 @@
 package org.rsmod.game.map
 
 @JvmInline
-public value class Coordinates(public val packed: Int) {
+public value class CoordGrid(public val packed: Int) {
 
     public val x: Int get() = (packed shr X_BIT_OFFSET) and X_BIT_MASK
 
@@ -11,23 +11,23 @@ public value class Coordinates(public val packed: Int) {
 
     public constructor(x: Int, z: Int, level: Int = 0) : this(pack(x, z, level))
 
-    public fun translate(xOffset: Int, zOffset: Int, levelOffset: Int = 0): Coordinates = Coordinates(
+    public fun translate(xOffset: Int, zOffset: Int, levelOffset: Int = 0): CoordGrid = CoordGrid(
         x = x + xOffset,
         z = z + zOffset,
         level = level + levelOffset
     )
 
-    public fun translateX(offset: Int): Coordinates = translate(offset, 0, 0)
+    public fun translateX(offset: Int): CoordGrid = translate(offset, 0, 0)
 
-    public fun translateZ(offset: Int): Coordinates = translate(0, offset, 0)
+    public fun translateZ(offset: Int): CoordGrid = translate(0, offset, 0)
 
-    public fun translateLevel(offset: Int): Coordinates = translate(0, 0, offset)
+    public fun translateLevel(offset: Int): CoordGrid = translate(0, 0, offset)
 
-    public operator fun minus(other: Coordinates): Coordinates {
+    public operator fun minus(other: CoordGrid): CoordGrid {
         return translate(-other.x, -other.z, -other.level)
     }
 
-    public operator fun plus(other: Coordinates): Coordinates {
+    public operator fun plus(other: CoordGrid): CoordGrid {
         return translate(other.x, other.z, other.level)
     }
 
@@ -44,8 +44,8 @@ public value class Coordinates(public val packed: Int) {
     @Suppress("MemberVisibilityCanBePrivate")
     public companion object {
 
-        public val ZERO: Coordinates = Coordinates(0)
-        public val NULL: Coordinates = Coordinates(-1)
+        public val ZERO: CoordGrid = CoordGrid(0)
+        public val NULL: CoordGrid = CoordGrid(-1)
 
         public const val X_BIT_COUNT: Int = 14
         public const val X_BIT_MASK: Int = (1 shl X_BIT_COUNT) - 1

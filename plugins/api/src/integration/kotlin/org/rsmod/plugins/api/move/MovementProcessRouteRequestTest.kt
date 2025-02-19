@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.model.route.RouteRequestCoordinates
 import org.rsmod.game.model.route.RouteRequestEntity
 import org.rsmod.plugins.api.map.collision.addObject
@@ -17,8 +17,8 @@ class MovementProcessRouteRequestTest {
 
     @Test
     fun GameTestState.testCoordinateRequest() = runGameTest {
-        val start = Coordinates(3200, 3200)
-        val dest = Coordinates(3205, 3202)
+        val start = CoordGrid(3200, 3200)
+        val dest = CoordGrid(3205, 3202)
         withCollisionState {
             val process = MovementProcess(playerList, it.routeFactory, it.stepFactory)
             it.collision.allocateIfAbsent(start.x, start.x, start.level)
@@ -36,8 +36,8 @@ class MovementProcessRouteRequestTest {
 
     @Test
     fun GameTestState.testEntityRequest() = runGameTest {
-        val start = Coordinates(3200, 3200)
-        val dest = Coordinates(3203, 3207)
+        val start = CoordGrid(3200, 3200)
+        val dest = CoordGrid(3203, 3207)
         val target = createEntity().apply { coords = dest }
         withCollisionState {
             val process = MovementProcess(playerList, it.routeFactory, it.stepFactory)
@@ -60,8 +60,8 @@ class MovementProcessRouteRequestTest {
 
     @Test
     fun GameTestState.testGameObjectRequest() = runGameTest {
-        val start = Coordinates(3200, 3200)
-        val dest = Coordinates(3203, 3205)
+        val start = CoordGrid(3200, 3200)
+        val dest = CoordGrid(3203, 3205)
         val target = createGameObject(dest) {
             width = 2
             height = 2

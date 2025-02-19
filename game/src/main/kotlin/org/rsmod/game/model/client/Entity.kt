@@ -1,11 +1,11 @@
 package org.rsmod.game.model.client
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 
 public sealed class Entity(
     public val width: Int,
     public val height: Int,
-    public var coords: Coordinates = Coordinates.ZERO
+    public var coords: CoordGrid = CoordGrid.ZERO
 ) {
 
     /**

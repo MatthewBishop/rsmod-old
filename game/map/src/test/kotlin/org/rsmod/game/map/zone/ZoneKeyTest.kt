@@ -3,7 +3,7 @@ package org.rsmod.game.map.zone
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.zone.ZoneKey.Companion.LEVEL_BIT_MASK
 import org.rsmod.game.map.zone.ZoneKey.Companion.X_BIT_MASK
 import org.rsmod.game.map.zone.ZoneKey.Companion.Z_BIT_MASK
@@ -61,7 +61,7 @@ class ZoneKeyTest {
 
     @Test
     fun testFromCoordinates() {
-        val coords = Coordinates(3200, 4800, 1)
+        val coords = CoordGrid(3200, 4800, 1)
         val key = ZoneKey.from(coords)
         assertEquals(400, key.x)
         assertEquals(600, key.z)

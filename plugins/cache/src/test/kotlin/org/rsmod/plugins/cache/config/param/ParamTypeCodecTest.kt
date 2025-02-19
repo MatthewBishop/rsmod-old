@@ -9,7 +9,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.plugins.cache.config.param.ParamTypeLoader.readType
 import org.rsmod.plugins.cache.config.param.ParamTypePacker.writeType
 import org.rsmod.plugins.cache.literal.CacheTypeLiteral
@@ -67,7 +67,7 @@ class ParamTypeCodecTest {
                         id = 1220
                         name = "test_param_1220"
                         typeChar = CacheTypeLiteral.Coordinate.char
-                        defaultInt = Coordinates(3200, 3200).packed
+                        defaultInt = CoordGrid(3200, 3200).packed
                     }.build()
                 )
             )

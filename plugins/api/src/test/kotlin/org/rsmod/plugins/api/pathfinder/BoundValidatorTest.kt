@@ -3,7 +3,7 @@ package org.rsmod.plugins.api.pathfinder
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.model.client.PlayerEntity
@@ -47,7 +47,7 @@ class BoundValidatorTest {
     fun testEntityTouchesGameObject() {
         val validator = createValidator { allocateIfAbsent(3200, 3200, 0) }
         val entity = createEntity()
-        entity.coords = Coordinates(3200, 3200)
+        entity.coords = CoordGrid(3200, 3200)
         assertFalse(validator.touches(entity, createGameObject(3200, 3200)))
         assertFalse(validator.touches(entity, createGameObject(3202, 3200)))
         assertFalse(validator.touches(entity, createGameObject(3200, 3202)))
@@ -127,11 +127,11 @@ class BoundValidatorTest {
         val builder = ObjectTypeBuilder().apply { id = 0 }
         val type = builder.apply(init).build()
         val entity = ObjectEntity(type.id, shape = 10, rot = 0)
-        return GameObject(type, Coordinates(x, z, level), entity)
+        return GameObject(type, CoordGrid(x, z, level), entity)
     }
 
     private fun Entity.withCoords(x: Int, z: Int, level: Int = coords.level): Entity {
-        coords = Coordinates(x, z, level)
+        coords = CoordGrid(x, z, level)
         return this
     }
 }

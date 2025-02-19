@@ -1,6 +1,6 @@
 package org.rsmod.game.map.zone
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 
 @JvmInline
 public value class ZoneKey(public val packed: Int) {
@@ -25,7 +25,7 @@ public value class ZoneKey(public val packed: Int) {
 
     public fun translateLevel(offset: Int): ZoneKey = translate(0, 0, offset)
 
-    public fun toCoords(): Coordinates = Coordinates(
+    public fun toCoords(): CoordGrid = CoordGrid(
         x = x * ZoneGrid.LENGTH,
         z = z * ZoneGrid.LENGTH,
         level = level
@@ -56,7 +56,7 @@ public value class ZoneKey(public val packed: Int) {
         public const val X_BIT_OFFSET: Int = Z_BIT_COUNT
         public const val LEVEL_BIT_OFFSET: Int = Z_BIT_COUNT + X_BIT_COUNT
 
-        public fun from(coords: Coordinates): ZoneKey = ZoneKey(
+        public fun from(coords: CoordGrid): ZoneKey = ZoneKey(
             x = coords.x / ZoneGrid.LENGTH,
             z = coords.z / ZoneGrid.LENGTH,
             level = coords.level

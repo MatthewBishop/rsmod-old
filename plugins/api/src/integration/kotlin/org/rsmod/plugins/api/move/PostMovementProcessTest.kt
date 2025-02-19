@@ -2,7 +2,7 @@ package org.rsmod.plugins.api.move
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.square.MapSquareGrid
 import org.rsmod.game.map.zone.ZoneGrid
 import org.rsmod.game.map.zone.ZoneKey
@@ -21,7 +21,7 @@ class PostMovementProcessTest {
     fun GameTestState.testBuildAreaNeutral() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
         withPlayer {
-            coords = Coordinates(3200, 3200)
+            coords = CoordGrid(3200, 3200)
             refreshBuildArea(coords)
             // Test player does not have REBUILD_NORMAL in downstream list.
             assertNull(RebuildNormal::class)
@@ -35,7 +35,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testBuildAreaRebuild() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         val dest = start.translateX(-40)
         withPlayer {
             coords = start
@@ -55,7 +55,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testZoneChangeEventNoMovement() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start
             prevCoords = start
@@ -68,7 +68,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testZoneChangeEventSmallMovement() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start.translateX(ZoneGrid.LENGTH - 1)
             prevCoords = start
@@ -88,10 +88,10 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testZoneChangeEventLogIn() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start
-            prevCoords = Coordinates.ZERO
+            prevCoords = CoordGrid.ZERO
             assertNull(MapEvent.ZoneChange::class)
             process.execute()
             assertNotNull(MapEvent.ZoneChange::class)
@@ -101,7 +101,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testZoneChangeEventPublish() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start.translateX(ZoneGrid.LENGTH)
             prevCoords = start
@@ -121,7 +121,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testMapSquareChangeEventNoMovement() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start
             prevCoords = start
@@ -134,7 +134,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testMapSquareChangeEventSmallMovement() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start.translateX(MapSquareGrid.LENGTH - 1)
             prevCoords = start
@@ -154,10 +154,10 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testMapSquareChangeEventLogIn() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start
-            prevCoords = Coordinates.ZERO
+            prevCoords = CoordGrid.ZERO
             assertNull(MapEvent.MapSquareChange::class)
             process.execute()
             assertNotNull(MapEvent.MapSquareChange::class)
@@ -167,7 +167,7 @@ class PostMovementProcessTest {
     @Test
     fun GameTestState.testMapSquareChangeEventPublish() = runGameTest {
         val process = PostMovementProcess(playerList, xteaRepository)
-        val start = Coordinates(3200, 3200)
+        val start = CoordGrid(3200, 3200)
         withPlayer {
             coords = start.translateX(MapSquareGrid.LENGTH)
             prevCoords = start

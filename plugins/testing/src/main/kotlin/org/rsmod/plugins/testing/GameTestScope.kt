@@ -1,6 +1,6 @@
 package org.rsmod.plugins.testing
 
-import org.rsmod.game.map.Coordinates
+import org.rsmod.game.map.CoordGrid
 import org.rsmod.game.map.entity.obj.ObjectEntity
 import org.rsmod.game.model.client.Entity
 import org.rsmod.game.model.client.PlayerEntity
@@ -48,7 +48,7 @@ public class GameTestScope {
     }
 
     public fun createGameObject(
-        coords: Coordinates,
+        coords: CoordGrid,
         rot: Int = 0,
         shape: ObjectShape = ObjectShape.CenterpieceStraight,
         init: ObjectTypeBuilder.() -> Unit
