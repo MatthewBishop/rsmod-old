@@ -6,6 +6,7 @@ dependencies {
     implementation(projects.buffer)
     implementation(projects.log)
     implementation(projects.toml)
+    implementation(projects.game.config)
     implementation(projects.game.coroutines)
     implementation(projects.game.events)
     implementation(projects.game.map)

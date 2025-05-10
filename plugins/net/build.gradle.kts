@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     implementation(projects.game)
+    implementation(projects.game.config)
     implementation(projects.game.events)
     implementation(projects.game.scripts)
     implementation(projects.game.protocol)

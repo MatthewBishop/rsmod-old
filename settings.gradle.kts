@@ -14,6 +14,7 @@ pluginManagement {
 include(
     "buffer",
     "game",
+    "game:config",
     "game:coroutines",
     "game:events",
     "game:map",

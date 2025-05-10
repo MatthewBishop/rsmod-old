@@ -8,6 +8,7 @@ dependencies {
     api(projects.plugins.typesGenerated)
     implementation(projects.buffer)
     implementation(projects.game)
+    implementation(projects.game.config)
     implementation(projects.game.events)
     implementation(projects.game.map)
     implementation(projects.game.scripts)
