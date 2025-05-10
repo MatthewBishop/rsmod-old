@@ -9,6 +9,7 @@ dependencies {
     implementation(projects.game.scripts)
     implementation(projects.game.protocol)
     implementation(projects.plugins.api)
+    implementation(projects.plugins.cacheApi)
     implementation(projects.plugins.profile)
     implementation(projects.plugins.store)
     implementation(libs.guava)

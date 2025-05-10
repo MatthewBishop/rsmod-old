@@ -15,6 +15,7 @@ dependencies {
     implementation(projects.game.pathfinder)
     implementation(projects.game.protocol)
     implementation(projects.json)
+    implementation(projects.plugins.cacheApi)
     implementation(projects.plugins.info)
     implementation(projects.plugins.types)
     implementation(projects.toml)

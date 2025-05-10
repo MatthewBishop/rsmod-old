@@ -5,7 +5,7 @@ plugins {
 dependencies {
     implementation(projects.buffer)
     implementation(projects.game.config)
-    implementation(projects.plugins.api)
+    implementation(projects.plugins.cacheApi)
     implementation(projects.plugins.cache)
     implementation(projects.plugins.types)
     implementation(projects.toml)
