@@ -1,6 +1,5 @@
 package org.rsmod.plugins.types.gen
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
@@ -59,33 +58,34 @@ public class NamedTypeGenerator {
     public fun writeConfigMapFiles(
         names: NamedTypeMapHolder,
         outputPath: Path,
-        mapper: ObjectMapper
     ): Unit = with(names) {
         if (!Files.exists(outputPath)) Files.createDirectories(outputPath)
-        writeConfigMapFile(outputPath.resolve("interfaces.rscm"), interfaces.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("components.rscm"), components.mapValues { it.value.packed }, mapper)
-        writeConfigMapFile(outputPath.resolve("items.rscm"), items.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("npcs.rscm"), npcs.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("objs.rscm"), objs.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("anims.rscm"), anims.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("graphics.rscm"), graphics.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("enums.rscm"), enums.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("structs.rscm"), structs.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("params.rscm"), parameters.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("invs.rscm"), inventories.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("varps.rscm"), varps.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("varbits.rscm"), varbits.mapValues { it.value.id }, mapper)
-        writeConfigMapFile(outputPath.resolve("scripts.rscm"), scripts.mapValues { it.value.id }, mapper)
+        writeConfigMapFile(outputPath.resolve("interfaces.rscm"), interfaces.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("components.rscm"), components.mapValues { it.value.packed })
+        writeConfigMapFile(outputPath.resolve("items.rscm"), items.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("npcs.rscm"), npcs.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("objs.rscm"), objs.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("anims.rscm"), anims.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("graphics.rscm"), graphics.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("enums.rscm"), enums.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("structs.rscm"), structs.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("params.rscm"), parameters.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("invs.rscm"), inventories.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("varps.rscm"), varps.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("varbits.rscm"), varbits.mapValues { it.value.id })
+        writeConfigMapFile(outputPath.resolve("scripts.rscm"), scripts.mapValues { it.value.id })
     }
 
-    public fun writeConfigMapFile(output: Path, names: Map<String, Int>, mapper: ObjectMapper) {
+    public fun writeConfigMapFile(output: Path, names: Map<String, Int>) {
         /* if there are no names we don't have to bother mapping */
         if (names.isEmpty()) {
             /* if there is an old file with same name - delete it to keep names in sync */
             if (Files.exists(output)) Files.delete(output)
             return
         }
-        val map = mapper.writeValueAsString(names).replace(" = ", ":")
+        val map = names.entries
+            .sortedBy { it.value }
+            .joinToString("\n") { "${it.key}:${it.value}" }
         Files.writeString(output, map)
     }
 

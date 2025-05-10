@@ -8,7 +8,6 @@ dependencies {
     implementation(projects.plugins.api)
     implementation(projects.plugins.types)
     implementation(projects.plugins.typesGenerated)
-    implementation(projects.toml)
     implementation(libs.clikt)
     implementation(libs.guice)
     implementation(libs.kotlinPoet)

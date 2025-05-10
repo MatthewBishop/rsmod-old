@@ -4,7 +4,6 @@ import com.google.inject.AbstractModule
 import org.rsmod.buffer.BufferModule
 import org.rsmod.game.config.GameConfigModule
 import org.rsmod.plugins.api.cache.CacheModule
-import org.rsmod.toml.TomlModule
 
 public object CacheTypeGeneratorModule : AbstractModule() {
 
@@ -12,6 +11,5 @@ public object CacheTypeGeneratorModule : AbstractModule() {
         install(BufferModule)
         install(CacheModule)
         install(GameConfigModule)
-        install(TomlModule)
     }
 }

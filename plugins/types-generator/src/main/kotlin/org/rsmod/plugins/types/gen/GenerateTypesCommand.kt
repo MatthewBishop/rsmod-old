@@ -1,12 +1,9 @@
 package org.rsmod.plugins.types.gen
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.github.ajalt.clikt.core.CliktCommand
 import com.google.inject.Guice
-import com.google.inject.Key
 import org.rsmod.game.config.GameConfig
 import org.rsmod.plugins.api.cache.name.CacheTypeNameLoader
-import org.rsmod.toml.Toml
 import java.nio.file.Path
 
 public fun main(args: Array<String>): Unit = GenerateTypesCommand().main(args)
@@ -16,7 +13,6 @@ public class GenerateTypesCommand : CliktCommand("generate-types") {
     override fun run() {
         val injector = Guice.createInjector(CacheTypeGeneratorModule)
         val generator = injector.getInstance(NamedTypeGenerator::class.java)
-        val mapper = injector.getInstance(Key.get(ObjectMapper::class.java, Toml::class.java))
         val config = injector.getInstance(GameConfig::class.java)
         val cacheNameLoader = injector.getInstance(CacheTypeNameLoader::class.java)
         val cacheNames = cacheNameLoader.load()
@@ -28,7 +24,6 @@ public class GenerateTypesCommand : CliktCommand("generate-types") {
         generator.writeConfigMapFiles(
             names = cacheNames,
             outputPath = config.dataPath.resolve("names/cache"),
-            mapper = mapper
         )
     }
 
